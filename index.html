@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Autómatas Finitos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">δ</div>
+    Autómatas Finitos
+  </div>
+  <span class="header-badge">Simulador Interactivo v1.0</span>
+</header>
+
+<div class="app">
+
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="section-label">Ejemplos precargados</div>
+      <div class="example-list" id="examples"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="section-label">Cadena de entrada</div>
+
+      <div class="input-group">
+        <label class="input-label" for="input-string">
+          Introduce la cadena a evaluar:
+        </label>
+        <input
+          type="text"
+          id="input-string"
+          class="string-input"
+          placeholder="ej. 0110101"
+          maxlength="20"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <div class="step-display" id="step-display"></div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary"   onclick="UI.runFull()">▶ Ejecutar</button>
+        <button class="btn btn-step"      onclick="UI.stepForward()">⊢ Paso</button>
+        <button class="btn btn-secondary" onclick="UI.reset()">↺ Reiniciar</button>
+      </div>
+
+      <div id="result-panel" class="result-panel">
+        <div class="result-title" id="result-title"></div>
+        <div id="result-body"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="section-label">Traza de ejecución</div>
+      <div class="trace-list" id="trace-list">
+        <div class="trace-item" id="trace-placeholder"
+             style="color: var(--text3); font-style: italic;">
+          Ejecuta una cadena para ver la traza...
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <main class="canvas-area">
+
+    <div class="canvas-toolbar">
+      <span class="toolbar-label">Diagrama del autómata</span>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-dot"
+               style="border-color: var(--accent); background: var(--accent-dim);">
+          </div>
+          Estado inicial / aceptación
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot"
+               style="border-color: var(--amber); background: var(--amber-dim);">
+          </div>
+          Estado actual
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot"
+               style="border-color: var(--red); background: var(--red-dim);">
+          </div>
+          Rechazado
+        </div>
+      </div>
+    </div>
+
+    <svg id="canvas-svg" viewBox="0 0 800 480"></svg>
+
+    <div class="info-strip">
+      <div class="info-item">
+        <span class="info-key">Autómata</span>
+        <span class="info-val" id="info-name">—</span>
+      </div>
+      <div class="info-item">
+        <span class="info-key">Estado actual</span>
+        <span class="current-state-badge" id="info-current">—</span>
+      </div>
+      <div class="info-item">
+        <span class="info-key">Alfabeto (Σ)</span>
+        <div class="tags" id="info-alphabet"></div>
+      </div>
+      <div class="info-item">
+        <span class="info-key">Paso</span>
+        <span class="info-val" id="info-step">0 / 0</span>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+<script src="examples/ends_01.js"></script>
+<script src="examples/binary_even.js"></script>
+<script src="examples/contains_00.js"></script>
+<script src="examples/div3.js"></script>
+<script src="examples/starts_ab.js"></script>
+<script src="examples/index.js"></script>
+<script src="js/automata.js"></script>
+<script src="js/visualizer.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
