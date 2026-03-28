@@ -149,8 +149,3 @@ cd finite-automata-simulator
 - **Clases de complejidad** L y NL
 
 ---
-
-## 👤 Autor
-
-Proyecto académico — Módulo de Modelos de Computación  
-Licencia: MIT
