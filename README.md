@@ -3,8 +3,6 @@
 Herramienta educativa interactiva para visualizar y simular **Autómatas Finitos Deterministas (AFD)**.  
 Desarrollada como proyecto académico para el módulo de **Modelos de Computación**.
 
-🔗 **Demo en vivo:** [tu-usuario.github.io/finite-automata-simulator](https://tu-usuario.github.io/finite-automata-simulator)
-
 ---
 
 ## ✨ Características
